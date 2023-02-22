@@ -1,23 +1,14 @@
 from distutils.core import setup, Extension
-from subprocess import Popen, PIPE
-
 
 sources = ["pytox/pytox.c", "pytox/core.c", "pytox/av.c", "pytox/util.c"]
+
 libraries = [
   "opus",
   "sodium",
   "toxcore",
-#  "toxcrypto",
-#  "toxdht",
-#  "toxdns",
-#  "toxencryptsave",
-#  "toxfriends",
-#  "toxgroup",
-#  "toxmessenger",
-#  "toxnetcrypto",
-#  "toxnetwork",
   "vpx",
 ]
+
 cflags = [
   "-Wall",
   # "-Werror",
@@ -29,13 +20,16 @@ cflags = [
 ]
 
 setup(
-    name="PyTox",
-    version="0.0.24",
-    description='Python binding for Tox the skype replacement',
+    name="PyTox-ng",
+    version="0.2.18",
+    description='Python bindings for https://github.com/TokTok/c-toxcore of https://tox.chat/',
+    url='https://github.com/oxij/PyTox-ng',
+
     author='Wei-Ning Huang (AZ)',
     author_email='aitjcize@gmail.com',
-    url='http://github.com/aitjcize/PyTox',
-    license='GPL',
+    maintainer='Jan Malakhovski',
+    maintainer_email='oxij@oxij.org',
+
     ext_modules=[
         Extension(
             "pytox",

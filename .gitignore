@@ -4,4 +4,3 @@ build/
 *.o
 ./compile
 _build
-.tox
